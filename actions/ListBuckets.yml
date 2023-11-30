@@ -5,8 +5,12 @@ nameConfigured: true
 steps:
   - id: '17013419674550.8297510209803711'
     type: httpRequest
-    name: request2
+    name: request
     params:
+      - type: datasourceId
+        value: '[Sample] AWS S3 API'
+        valueType: custom
+        mustSelectFirst: true
       - type: method
         value: GET
         valueType: string
@@ -61,23 +65,35 @@ steps:
           Bucket Name')].map(nodeToText);
 
 
-          return creationDates.map((creationDate, index) => ({ creationDate,
-          name: names[index] }));
+          return creationDates.map((creationDate, index) => ({
+            creationDate,
+            name: names[index],
+          }));
         valueType: interpolatedValue
         interpolationType: code
       - type: failureMapper
-        value: 'return [{ name: {{state.bucketName}} }];'
+        value: >-
+          console.error({{res}});
+
+          console.error('Connect your own data source to be able to list
+          buckets.');
+
+
+          return [
+            {
+              creationDate: null,
+              name: {{state.bucketName}},
+            },
+          ];
         valueType: interpolatedValue
         interpolationType: code
       - type: mapperEnabled
         value: true
         valueType: custom
-      - type: datasourceId
-        value: '[Sample] AWS S3 API'
-        valueType: custom
     level: 0
-    fallthroughError: true
+    fallthroughError: false
     isChanged: true
+    nameConfigured: true
 mode: manual
 modeConfigured: false
 parentId: null
@@ -89,7 +105,7 @@ config:
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.ListBuckets.name}}" has failed
+  errorToast: Connect your own data source to be able to list buckets.
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -97,4 +113,7 @@ config:
   preserveStateOnPageChange: true
 selected: true
 configured: true
-index: 6
+actions:
+  error: []
+  success: []
+index: 2

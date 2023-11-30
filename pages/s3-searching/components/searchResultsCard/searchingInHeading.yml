@@ -18,7 +18,7 @@ styles:
       w: 24
       h: 10
 properties:
-  name: heading6
+  name: searchingInHeading
   text: Searching in {{state.bucketName}}
   verticalAlignment: middle
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:

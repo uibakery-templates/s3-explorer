@@ -369,12 +369,54 @@ properties:
       }
     ]
   config: |-
+    const graphic = {
+      type: 'group',
+      left: 'center',
+      top: 'center',
+      children: [
+        {
+          type: 'rect',
+          z: 100,
+          left: 'center',
+          top: 'middle',
+          shape: {
+            width: 130,
+            height: 40,
+            borderRadius: 2,
+          },
+          style: {
+            fill: '#8b95a9',
+            stroke: '#8b95a9',
+            lineWidth: 1,
+            shadowBlur: 8,
+            shadowOffsetX: 3,
+            shadowOffsetY: 3,
+            shadowColor: 'rgba(0,0,0,0.01)',
+          },
+        },
+        {
+          type: 'text',
+          z: 100,
+          left: 'center',
+          top: 'middle',
+          style: {
+            fill: '#fff',
+            width: 220,
+            overflow: 'break',
+            text: 'No data to display',
+            font: '13px Inter',
+          },
+        },
+      ],
+    };
+
     return {
       title: {
         text: 'S3 usage',
         top: '2%',
         left: '2%',
       },
+      ...({{actions.makeTree.data.length}} > 0 ? {} : { graphic }),
       series: [
         {
           name: 'S3 usage',

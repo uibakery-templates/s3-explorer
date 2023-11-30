@@ -59,7 +59,7 @@ properties:
     dataValue: 'false'
     withData: false
   selectedRowIndex: >-
-    {{actions.ListBuckets.data}}.findIndex((bucket) => bucket.name ===
+    {{actions.ListBuckets.data}}.findIndex(({ name }) => name ===
     {{state.bucketName}});
 actions:
   init: []

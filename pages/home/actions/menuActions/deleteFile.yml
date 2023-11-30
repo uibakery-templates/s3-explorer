@@ -5,7 +5,7 @@ nameConfigured: true
 steps:
   - id: '17013416348910.7087263811462439'
     type: s3Query
-    name: s3Query2
+    name: s3Query
     params:
       - type: s3ActionType
         value: deleteFile
@@ -55,6 +55,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: false
+    nameConfigured: true
 mode: manual
 modeConfigured: false
 config:
@@ -64,13 +65,15 @@ config:
   successToast: Action "{{actions.deleteFile.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
-  showErrorToast: true
+  showErrorToast: false
   errorToast: Action "{{actions.deleteFile.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: false
-  preserveStateOnPageChange: true
+  preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 1
+parentPageId: '1'
+parentId: '17013602740110.21744822239143113'
+index: 8

@@ -12,6 +12,7 @@ steps:
           {{state.searchProgress}} += 100 /
           {{actions.listFileWithExtension.data.length}};
 
+
           {{ui.progressBar}}.setValue({{state.searchProgress}}.toFixed(1));
 
 
@@ -88,7 +89,7 @@ steps:
                   - type: asyncCode
                     value: >-
                       const regex = new RegExp('^.*(?<searched>' +
-                      ui.regexSearch.value + ').*$', 'gim');
+                      {{ui.regexSearch.value}} + ').*$', 'gim');
 
 
                       const matches = [...{{data}}.Body.matchAll(regex)];
@@ -129,4 +130,4 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 13
+index: 14

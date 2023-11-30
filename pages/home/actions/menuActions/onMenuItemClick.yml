@@ -8,7 +8,7 @@ steps:
     name: isDeleteOrDownload
     params:
       - type: code
-        value: '[''download'', ''delete''].includes({{params?.id}});'
+        value: /^(download|delete)$/.test({{params?.id}});
         valueType: interpolatedValue
         interpolationType: code
       - type: steps
@@ -21,7 +21,13 @@ steps:
                 params:
                   - type: asyncCode
                     value: >-
-                      {{actions[`${params.id}File`]}}.trigger({ fileKey:
+                      const actionMapper = {
+                        ['download']: {{actions.downloadFile}},
+                        ['delete']: {{actions.deleteFile}},
+                      };
+
+
+                      await actionMapper[{{params.id}}].trigger({ fileKey:
                       params?.row?.Key });
                     valueType: interpolatedValue
                     interpolationType: code
@@ -98,7 +104,7 @@ config:
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.onMenuItemClick.name}}" has failed
+  errorToast: Connect your own data source to be able to modify bucket.
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -106,4 +112,5 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 8
+parentId: '17013602740110.21744822239143113'
+index: 13

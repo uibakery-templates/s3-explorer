@@ -27,7 +27,7 @@ slots:
     children:
       - button.yml
       - regexSearch.yml
-      - heading6.yml
+      - searchingInHeading.yml
       - selectExtension.yml
   - id: '17001278617820.7607025837061272'
     name: footer

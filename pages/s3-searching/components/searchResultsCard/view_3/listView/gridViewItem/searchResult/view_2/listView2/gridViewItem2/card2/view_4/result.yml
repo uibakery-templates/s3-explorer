@@ -7,7 +7,7 @@ styles:
       x: 0
       y: 0
       w: 24
-      h: 6
+      h: 7
     fontSize:
       customValue: 14
       customUnit: px
