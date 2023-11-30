@@ -1,0 +1,40 @@
+id: '17000773542350.7112899606840661'
+definitionId: horizontalMenu
+parentSlotId: '17000772591340.7615264822700067'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 11
+      h: 9
+    logo:
+      url: https://upload.wikimedia.org/wikipedia/commons/b/bc/Amazon-S3-Logo.svg
+      uploadUrl: ''
+      name: ''
+      active: url
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 10
+properties:
+  autoSyncItems: true
+  name: horizontalMenu
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  items: |-
+    [
+      {
+        title: 'S3 Explorer',
+        link: '/home'
+      },
+      {
+        title: 'S3 Searching',
+        link: '/s3-searching'
+      }
+    ]
+actions: {}
+slots: []

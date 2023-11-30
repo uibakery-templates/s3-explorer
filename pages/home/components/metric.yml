@@ -1,0 +1,53 @@
+id: '17000665265540.5508965681717752'
+definitionId: metric
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 115
+      w: 6
+      h: 27
+  xs:
+    gridItem:
+      x: 0
+      y: 268
+      w: 24
+      h: 27
+properties:
+  data: '{{actions.listAllFiles.data}}'
+  name: metric
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Total size
+  operation: sum
+  groupType: not_group
+  showLoading:
+    value: false
+    dataValue: '{{actions.listAllFiles.loading}}'
+    withData: true
+actions: {}
+slots:
+  - id: '17000665265540.6888590824683705'
+    name: metricField
+    children:
+      - id: '17000665443900.03223537454642722'
+        definitionId: atomicString
+        parentSlotId: '17000665265540.6888590824683705'
+        styles: {}
+        properties:
+          name: atomicString16
+          prop: Size
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          mappedValue: '{{formatBytes(value, 2)}}'
+        index: 0
+        slots: []
+  - id: '17000665265540.09009375158146304'
+    name: additionalField
+    children: []
+  - id: '17000665267070.7887735226752777'
+    name: groupByField
+    children: []

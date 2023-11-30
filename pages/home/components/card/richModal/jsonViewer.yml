@@ -1,0 +1,27 @@
+id: '17000010982930.7295358262723022'
+definitionId: jsonViewer
+parentSlotId: '17000009249230.9327159660055226'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 14
+      h: 129
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 78
+properties:
+  value: '{{actions.readFile.data.Body}}'
+  name: jsonViewer
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{actions.readFile.data.ContentType}} === ''application/json'''
+  showCopyButton: true
+  displayMode: code
+actions: {}
+slots: []

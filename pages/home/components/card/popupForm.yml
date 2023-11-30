@@ -1,0 +1,121 @@
+id: '17000048353360.003944212710019324'
+definitionId: popupForm
+parentSlotId: '16999760039870.5743925598826909'
+styles:
+  xl:
+    gridItem:
+      id: '17000048353360.003944212710019324'
+      x: 14
+      y: 0
+      w: 1
+      h: 10
+  xs:
+    gridItem:
+      x: 14
+      y: 10
+      w: 1
+      h: 10
+properties:
+  dynamicFields:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "full_name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  entity: ''
+  name: popupForm
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: '{{ui.popupForm.value.id}} the file to destination'
+  buttonHidden:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions:
+  submitEvent:
+    - action: '17000073391990.7508125833638761'
+      paramCode: |-
+        {
+          id
+        }
+      blockPageLoad: false
+      index: 0
+  init: []
+  popupClick: []
+  changeEvent: []
+  customButtonClick: []
+  popupOpen: []
+  popupClose: []
+slots:
+  - id: '17000048353360.06724673357628319'
+    name: structure
+    children:
+      - id: '17000049488160.8558316527127561'
+        definitionId: atomicString
+        parentSlotId: '17000048353360.06724673357628319'
+        styles: {}
+        properties:
+          name: atomicString14
+          prop: srcKey
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          forceView: true
+          showCopyButton: true
+          disabled:
+            value: false
+            dataValue: 'false'
+            withData: false
+          title: Source Key
+          required:
+            value: true
+            dataValue: 'false'
+            withData: false
+        index: 0
+        slots: []
+      - id: '17000049518160.2943091553491102'
+        definitionId: atomicString
+        parentSlotId: '17000048353360.06724673357628319'
+        styles: {}
+        properties:
+          name: atomicString15
+          prop: dstKey
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          required:
+            value: true
+            dataValue: 'false'
+            withData: false
+          title: Destination Key
+        index: 1
+        slots: []
+      - id: '17000074219010.3887030929924875'
+        definitionId: atomicString
+        parentSlotId: '17000048353360.06724673357628319'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString13
+          prop: id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 2
+        slots: []

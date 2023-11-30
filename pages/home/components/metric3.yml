@@ -1,0 +1,53 @@
+id: '17001286277680.16443836698561398'
+definitionId: metric
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 142
+      w: 6
+      h: 27
+  xs:
+    gridItem:
+      x: 12
+      y: 295
+      w: 12
+      h: 27
+properties:
+  data: '{{actions.listAllFiles.data}}'
+  name: metric3
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Average file size
+  operation: avg
+  groupType: not_group
+  showLoading:
+    withData: true
+    dataValue: '{{actions.listAllFiles.loading}}'
+    value: false
+slots:
+  - id: '17001286277680.02889942757310693'
+    name: metricField
+    children:
+      - id: '17001286711890.6318368234586385'
+        definitionId: atomicString
+        parentSlotId: '17001286277680.02889942757310693'
+        styles: {}
+        properties:
+          name: atomicString17
+          prop: Size
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          mappedValue: '{{formatBytes(value, 2)}}'
+        index: 0
+        slots: []
+  - id: '17001286277680.224104175408935'
+    name: additionalField
+    children: []
+  - id: '17001286278940.5035495585911773'
+    name: groupByField
+    children: []
+actions: {}

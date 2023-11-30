@@ -1,0 +1,42 @@
+storeItemList:
+  - id: '16999772985330.11278241433058067'
+    name: bucketName
+    value: uibakery-aws-s3-app
+    valueType: string
+    initialValue: uibakery-aws-s3-app
+    version: 1
+  - id: '17001359826560.5666104975840678'
+    name: searchProgress
+    value: 0
+    valueType: number
+    initialValue: 0
+    version: 1
+    parentPageId: '17000773280870.8041752909034596'
+metadata:
+  favicon: ''
+  code: |-
+    <script>
+      function formatBytes(bytes, decimals = 0) {
+        if (!bytes) return "0 bytes";
+
+        // https://en.wikipedia.org/wiki/Binary_prefix
+        const sizes = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "RB", "QB"];
+
+        const i = Math.floor(Math.log2(bytes) / 10);
+
+        return `${(bytes / (2 ** 10) ** i).toFixed(Math.max(0, decimals))} ${sizes[i] ?? `^ ${i}`}`;
+      }
+
+      function encodeHTML(source) {
+        return source.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+      }
+    </script>
+  title: New app
+  description: ''
+appSettings:
+  properties:
+    defaultData: '{}'
+  actions: {}
+  gridVersion: 2
+  density: default
+internalType: project

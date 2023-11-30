@@ -1,0 +1,59 @@
+id: '17000009249230.10430931774220675'
+definitionId: modal
+parentSlotId: '16999760039870.5743925598826909'
+styles:
+  xl:
+    gridItem:
+      id: '17000009249230.10430931774220675'
+      x: 13
+      y: 0
+      w: 1
+      h: 10
+    modalSize:
+      widthValue: 90
+      widthUnit: '%'
+      heightValue: 80
+      heightUnit: '%'
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
+  xs:
+    gridItem:
+      x: 13
+      y: 10
+      w: 1
+      h: 10
+properties:
+  name: richModal
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonHidden:
+    value: true
+    dataValue: 'false'
+    withData: false
+  buttonText: ''
+  showHeader: false
+  closeOnEsc: true
+  closeOnBackdrop: true
+actions: {}
+slots:
+  - id: '17000009249230.4711210413716087'
+    name: header
+    children: []
+  - id: '17000009249230.9327159660055226'
+    name: body
+    children:
+      - readfileDetail.yml
+      - jsonViewer.yml
+      - markdownText.yml
+      - text.yml
+      - image.yml
+  - id: '17000009249230.1421651619857074'
+    name: footer
+    children: []

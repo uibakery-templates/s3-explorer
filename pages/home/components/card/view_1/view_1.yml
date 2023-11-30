@@ -1,0 +1,16 @@
+id: '16999760039870.8254194803198505'
+definitionId: view
+styles: {}
+properties:
+  name: view_1
+  viewName: view_1
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16999760039870.31768555343388094'
+index: 0
+slots:
+  - id: '16999760039870.4607856529955976'
+    name: content
+    children:
+      - filesInBucketTable.yml

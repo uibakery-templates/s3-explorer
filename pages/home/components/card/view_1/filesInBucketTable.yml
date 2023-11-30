@@ -1,0 +1,340 @@
+id: '16999680284590.11492853148714977'
+definitionId: smartTable
+parentSlotId: '16999760039870.4607856529955976'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 71
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 161
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "full_name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: '{{actions.onFileSearch.data}}'
+  name: filesInBucketTable
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: ''
+  showLoading:
+    value: false
+    dataValue: >-
+      {{actions.listAllFiles.loading}} || {{actions.onFileSearch.loading}} ||
+      {{actions.onRowClick.loading}}
+    withData: true
+  totalRowConfig:
+    show: false
+    position: top
+    rowColor: hint
+    textStyle: []
+    textColor: basic
+    updateWhenFiltering: true
+    themeDefaultOverridePropertyKey: smartTableTotalRowConfig
+  limit: '20'
+  containerStyles:
+    withData: false
+    dataValue: |-
+      {
+        padding: 'default',
+        shadow: 'default',
+        border: 'default'
+      }
+    value:
+      padding: default
+      shadow: none
+      border: none
+  showExportAction:
+    value: false
+    dataValue: 'true'
+    withData: false
+  showReloadAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showAddAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showFilter: false
+  disableRowSelection:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showClearSelection:
+    value: false
+    dataValue: 'true'
+    withData: false
+  rowVariation: normal
+  showDeleteAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showEditAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+actions:
+  smartTableRowClick:
+    - action: '16999680513090.022181194028760398'
+      paramCode: ''
+      index: 0
+  smartTableReload:
+    - action: '16999647748280.017435746760865678'
+      paramCode: ''
+      blockPageLoad: false
+      index: 1
+  init: []
+  smartTableCreate: []
+  smartTableEdit: []
+  smartTableBulkEdit: []
+  smartTableDelete: []
+  smartTableRowSelect: []
+  smartTablePageSelect: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+slots:
+  - id: '16999680284590.4722547498261733'
+    name: columns
+    children:
+      - id: '16999680284960.33365591623821955'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString
+          prop: Key
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: '100'
+          filter: true
+          title: Path
+          filterVariation:
+            value: includes
+            dataValue: includes
+            withData: false
+        parentSlotId: '16999680284590.4722547498261733'
+        index: 0
+        slots: []
+      - id: '16999680284960.9544101446537367'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime
+          prop: LastModified
+          primaryKey: false
+          timeFormat:
+            value: HH:mm:ss
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: '100'
+          filter: true
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: MMM dd, yyyy
+            withData: false
+          withSeconds: false
+          filterVariation:
+            value: includes
+            dataValue: includes
+            withData: false
+        parentSlotId: '16999680284590.4722547498261733'
+        index: 1
+        slots: []
+      - id: '16999680284960.5256755536770232'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString2
+          prop: ETag
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16999680284590.4722547498261733'
+        index: 2
+        slots: []
+      - id: '16999680284960.5644280774158112'
+        definitionId: atomicJsonEditor
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicJsonEditor
+          prop: ChecksumAlgorithm
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16999680284590.4722547498261733'
+        index: 3
+        slots: []
+      - id: '16999981706030.8425800658113343'
+        definitionId: atomicContextMenuButton
+        parentSlotId: '16999680284590.4722547498261733'
+        styles:
+          xl:
+            iconPlacement: center
+            status:
+              value: primary
+              dataValue: basic
+              withData: false
+        properties:
+          name: atomicContextMenuButton
+          text: ''
+          contextMenuItems:
+            value:
+              - id: download
+                title: Download
+                icon: cloud-download
+                __UIBAKERY__SYSTEM_ID__: '1'
+              - id: copy
+                title: Copy
+                icon: clipboard
+                __UIBAKERY__SYSTEM_ID__: '17000046673790.5313677951578395'
+              - id: move
+                title: Move
+                icon: move
+                __UIBAKERY__SYSTEM_ID__: '17000047032490.8903981236855052'
+              - id: delete
+                title: Delete
+                icon: trash-2
+                __UIBAKERY__SYSTEM_ID__: '16999989812480.6401923582105469'
+            dataValue: |-
+              [
+                {
+                  id: 'item_1',
+                  title: 'Item 1',
+                  icon: 'chevron-right-outline',
+                },
+                {
+                  id: 'item_2',
+                  title: 'Item 2',
+                  icon: 'chevron-right-outline',
+                },
+              ]
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          showLoading:
+            value: false
+            dataValue: ''
+            withData: true
+          appearance:
+            value: ghost
+            dataValue: filled
+            withData: false
+          icon:
+            value: menu-arrow
+            dataValue: star-outline
+            withData: false
+          prop: Actions
+          contextMenuPosition:
+            value: left
+            dataValue: bottom
+            withData: false
+          width: '70'
+          pinColumn: right
+        actions:
+          menuItemClick:
+            - action: '16999994620960.23677839481737606'
+              paramCode: ''
+              index: 0
+          buttonClick: []
+        index: 6
+        slots: []
+      - id: '16999680284960.38542327344780447'
+        definitionId: atomicSelect
+        parentSlotId: '16999680284590.4722547498261733'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect
+          prop: StorageClass
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: '90'
+          options:
+            value:
+              - value: STANDARD
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17000365806170.367502905321067'
+            dataValue: >-
+              {{actions.listAllFiles.data}}.map(({ StorageClass }) => ({ value:
+              StorageClass }));
+            withData: true
+          appearance:
+            value: outline
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
+          mappedValue: '{{value}}'
+        index: 5
+        slots: []
+      - id: '16999680284960.42705982725458225'
+        definitionId: atomicString
+        parentSlotId: '16999680284590.4722547498261733'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString3
+          prop: Size
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          mappedValue: '{{formatBytes(value)}}'
+          textStyle:
+            transform: none
+          primaryKey: false
+          filter: true
+          width: '80'
+          filterVariation:
+            value: includes
+            dataValue: includes
+            withData: false
+        index: 4
+        slots: []

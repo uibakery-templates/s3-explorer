@@ -1,0 +1,109 @@
+id: '16999994620960.23677839481737606'
+kind: workflow
+name: onMenuItemClick
+nameConfigured: true
+steps:
+  - id: '17000051960210.35682672548555394'
+    type: condition
+    name: isDeleteOrDownload
+    params:
+      - type: code
+        value: '[''download'', ''delete''].includes({{params?.id}});'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16999999270710.41316589872243115'
+                type: customAsyncCode
+                name: triggerAction
+                params:
+                  - type: asyncCode
+                    value: >-
+                      {{actions[`${params.id}File`]}}.trigger({ fileKey:
+                      params?.row?.Key });
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '17001767709200.16217708732087321'
+                type: condition
+                name: isDelete
+                params:
+                  - type: code
+                    value: '{{params}}.id === ''delete'';'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17001768183550.5089898937044628'
+                            type: customAsyncCode
+                            name: removeRow
+                            params:
+                              - type: asyncCode
+                                value: >-
+                                  {{actions.onFileSearch.data}}.splice({{ui.filesInBucketTable.selectedRow.index}},
+                                  1);
+
+                                  return {{data}};
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '17000052819220.5442259019606008'
+                type: customAsyncCode
+                name: openForm
+                params:
+                  - type: asyncCode
+                    value: >-
+                      {{ui.popupForm}}.setValue({ srcKey: {{params}}?.row?.Key,
+                      id: {{params}}?.id });
+
+                      {{ui.popupForm.open()}};
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.onMenuItemClick.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.onMenuItemClick.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.onMenuItemClick.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+index: 8

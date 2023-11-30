@@ -1,0 +1,93 @@
+id: '17006554317940.6344810127118252'
+kind: workflow
+name: makeTree
+nameConfigured: true
+steps:
+  - id: '17006554378140.7623387208851875'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16999647748280.017435746760865678'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17006555224160.9450274225666879'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: |-
+          const result = [];
+
+          {{data}}.reduce(
+            (rootNode, file) => {
+              file.Key.split('/').reduce((node, subpath, depth, splittedPath) => {
+                if (!node.children) {
+                  node.children = [];
+                }
+
+                let childNode = node.children.find((sameLevelNode) => sameLevelNode.name === subpath);
+
+                if (!childNode) {
+                  childNode = {
+                    name: subpath,
+                    path: splittedPath.slice(0, depth + 1).join('/'),
+                    value: file.Size,
+                  };
+                  node.children.push(childNode);
+                } else {
+                  childNode.value += file.Size;
+                }
+
+                return childNode;
+              }, rootNode);
+
+              return rootNode;
+            },
+            { children: result }
+          );
+
+          return result;
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.makeTree.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.makeTree.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.makeTree.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+index: 12

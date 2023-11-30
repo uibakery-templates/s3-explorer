@@ -1,0 +1,26 @@
+id: '16999675772760.18716594512704265'
+definitionId: s3FileUploader
+parentSlotId: '16999760039870.5743925598826909'
+styles:
+  xl:
+    gridItem:
+      x: 18
+      y: 0
+      w: 6
+      h: 10
+  xs:
+    gridItem:
+      x: 17
+      y: 10
+      w: 7
+      h: 10
+properties:
+  name: s3FileUploader
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  datasource: UIBAKERY AWS S3 APP
+  s3Bucket: '{{state.bucketName}}'
+  maxFileSize: '2'
+actions: {}
+slots: []

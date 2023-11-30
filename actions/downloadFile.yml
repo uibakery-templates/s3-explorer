@@ -1,0 +1,76 @@
+id: '16999970984550.665953805319172'
+kind: workflow
+name: downloadFile
+nameConfigured: true
+steps:
+  - id: '17013416419990.6726622589279907'
+    type: s3Query
+    name: s3Query2
+    params:
+      - type: s3ActionType
+        value: downloadFile
+        valueType: custom
+      - type: s3BucketName
+        value: ''
+        valueType: custom
+      - type: s3FilePrefix
+        value: ''
+        valueType: interpolatedValue
+      - type: s3Delimiter
+        value: ''
+        valueType: interpolatedValue
+      - type: s3MaxKeys
+        value: ''
+        valueType: interpolatedValue
+      - type: s3FileKey
+        value: '{{params.fileKey}}'
+        valueType: interpolatedValue
+      - type: s3SignedOperationType
+        value: GET
+        valueType: custom
+      - type: s3UploadContentType
+        value: ''
+        valueType: interpolatedValue
+      - type: s3UploadData
+        value: ''
+        valueType: interpolatedValue
+      - type: s3DestinationFileKey
+        value: ''
+        valueType: interpolatedValue
+      - type: s3TagSet
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: '[Sample] AWS S3'
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: false
+mode: manual
+modeConfigured: true
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.downloadFile.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.downloadFile.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.downloadFile.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: true
+index: 2

@@ -1,0 +1,55 @@
+id: '16999681150310.007090309926137239'
+definitionId: modal
+parentSlotId: '16999760039870.5743925598826909'
+styles:
+  xl:
+    gridItem:
+      id: '16999681150310.007090309926137239'
+      x: 12
+      y: 0
+      w: 1
+      h: 10
+    modalSize:
+      widthValue: 60
+      widthUnit: '%'
+      heightValue: 60
+      heightUnit: '%'
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
+  xs:
+    gridItem:
+      x: 12
+      y: 10
+      w: 1
+      h: 10
+properties:
+  name: modal
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonText: ''
+  buttonHidden:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showHeader: false
+  closeOnBackdrop: true
+  closeOnEsc: true
+actions: {}
+slots:
+  - id: '16999681150310.21970675668081485'
+    name: header
+    children: []
+  - id: '16999681150310.6881246708498694'
+    name: body
+    children:
+      - listallfilesinbuckettableDetail.yml
+  - id: '16999681150310.8810819904115188'
+    name: footer
+    children: []

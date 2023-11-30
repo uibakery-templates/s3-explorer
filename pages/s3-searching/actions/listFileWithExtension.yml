@@ -1,0 +1,57 @@
+id: '17002084242660.15893129686298924'
+kind: workflow
+name: listFileWithExtension
+nameConfigured: true
+steps:
+  - id: '17002084421980.40806126607328586'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16999647748280.017435746760865678'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: >-
+          const regex = new RegExp('\\.(' +
+          {{ui.selectExtension.value}}.join('|') + ')$');
+
+          return {{data}}.filter((file) => regex.test(file.Key));
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17000773280870.8041752909034596'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.listFileWithExtension.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.listFileWithExtension.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.listFileWithExtension.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+index: 15

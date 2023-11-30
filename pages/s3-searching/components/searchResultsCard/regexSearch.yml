@@ -1,0 +1,48 @@
+id: '17000798109230.4476091282430623'
+definitionId: stringEdit
+parentSlotId: '17001278617820.711193822043652'
+styles:
+  xl:
+    gridItem:
+      x: 17
+      y: 0
+      w: 4
+      h: 10
+  xs:
+    gridItem:
+      x: 10
+      y: 10
+      w: 7
+      h: 10
+properties:
+  name: regexSearch
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelWidth: 0
+  fieldTooltip: regex pattern to find in the selected files
+  labelConfig:
+    text: ''
+    position: horizontal
+    align: left
+  iconPlacement: none
+  icon:
+    value: search
+    dataValue: star-outline
+    withData: false
+  length:
+    value:
+      min: null
+      max: null
+    dataValue: '[0, 10]'
+    withData: false
+  regexpPatternErrorMessage: ''
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
+  dynamicErrorMessageWidth: true
+  regexpPattern: '[\w\-./]+'
+  placeholder: regex pattern
+actions: {}
+slots: []

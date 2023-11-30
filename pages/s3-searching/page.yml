@@ -1,0 +1,27 @@
+id: '17000773280870.8041752909034596'
+name: S3 Searching
+url: s3-searching
+roleIds: []
+disableInMenu: false
+parentPageId: ''
+index: 1
+slots:
+  - id: '17000773280870.5994229655922527'
+    name: content
+    children:
+      - id: '17000773280870.6475626360367961'
+        definitionId: grid
+        parentSlotId: '17000773280870.5994229655922527'
+        styles: {}
+        properties:
+          name: s3-grep
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17000773280870.04568504618329938'
+            name: content
+            children:
+              - components/searchResultsCard/searchResultsCard.yml

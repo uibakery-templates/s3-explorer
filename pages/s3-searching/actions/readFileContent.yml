@@ -1,0 +1,132 @@
+id: '17001265757490.925680309935587'
+kind: workflow
+name: readFileContent
+nameConfigured: true
+steps:
+  - id: '17001357814510.02566338885853492'
+    type: customAsyncCode
+    name: incrementProgress
+    params:
+      - type: asyncCode
+        value: >-
+          {{state.searchProgress}} += 100 /
+          {{actions.listFileWithExtension.data.length}};
+
+          {{ui.progressBar}}.setValue({{state.searchProgress}}.toFixed(1));
+
+
+          {{ui.progressText}}.setValue('Processing: ' + {{data}}.fileKey);
+
+
+          return {{data}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17001654104610.23875502554517714'
+    type: executeAction
+    name: readFile
+    params:
+      - type: action
+        value: '16999691250120.18535816335285804'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17001270727440.4566347339170389'
+    type: condition
+    name: hasText
+    params:
+      - type: code
+        value: >-
+          {{data.ContentType}}.startsWith('text') ||
+          /(json|xml)$/.test({{data.ContentType}});
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17001271003930.8934376393262733'
+                type: customAsyncCode
+                name: createBody
+                params:
+                  - type: asyncCode
+                    value: |-
+                      return {
+                        ...{{data}},
+                        Body: atob({{data.BodyBase64}}),
+                      };
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '17001588863780.4542617464526779'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: >-
+                      const regex = new RegExp('^.*(?<searched>' +
+                      ui.regexSearch.value + ').*$', 'gim');
+
+
+                      const matches = [...{{data}}.Body.matchAll(regex)];
+
+
+                      return {
+                        ...{{data}},
+                        matches: matches.map((m) => m[0]),
+                      };
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: false
+parentPageId: '17000773280870.8041752909034596'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.readFileContent.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.readFileContent.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.readFileContent.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+index: 13

@@ -1,0 +1,53 @@
+id: '17000665773070.7503001656875827'
+definitionId: metric
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 88
+      w: 6
+      h: 27
+  xs:
+    gridItem:
+      x: 0
+      y: 295
+      w: 12
+      h: 27
+properties:
+  data: '{{actions.listAllFiles.data}}'
+  name: metric2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Number of files
+  operation: count
+  groupType: not_group
+  showLoading:
+    value: false
+    dataValue: '{{actions.listAllFiles.loading}}'
+    withData: true
+actions: {}
+slots:
+  - id: '17000665773070.7572976911104088'
+    name: metricField
+    children:
+      - id: '17000665915000.7511819277585619'
+        definitionId: atomicNumber
+        parentSlotId: '17000665773070.7572976911104088'
+        styles: {}
+        properties:
+          name: atomicNumber4
+          prop: Key
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []
+  - id: '17000665773070.6819049936543318'
+    name: additionalField
+    children: []
+  - id: '17000665774560.9146280904621302'
+    name: groupByField
+    children: []

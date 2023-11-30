@@ -1,0 +1,100 @@
+id: '17002126620960.9707184848290682'
+kind: workflow
+name: ListBuckets
+nameConfigured: true
+steps:
+  - id: '17013419674550.8297510209803711'
+    type: httpRequest
+    name: request2
+    params:
+      - type: method
+        value: GET
+        valueType: string
+      - type: url
+        value: https://s3.eu-north-1.amazonaws.com
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: Host
+            value: s3.amazonaws.com
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: raw
+        valueType: string
+      - type: successMapper
+        value: >-
+          const parser = new DOMParser();
+
+          const doc = parser.parseFromString(atob({{data}}.base64),
+          {{data}}.contentType);
+
+
+          const errorNode = doc.querySelector('parsererror');
+
+          if (errorNode) {
+            throw new Error(errorNode.innerHTML);
+          }
+
+
+          const nodeToText = (node) => node.textContent;
+
+          const creationDates = [...doc.querySelectorAll('ListAllMyBucketsResult
+          Buckets Bucket CreationDate')].map(nodeToText);
+
+          const names = [...doc.querySelectorAll('ListAllMyBucketsResult Buckets
+          Bucket Name')].map(nodeToText);
+
+
+          return creationDates.map((creationDate, index) => ({ creationDate,
+          name: names[index] }));
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: 'return [{ name: {{state.bucketName}} }];'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+      - type: datasourceId
+        value: '[Sample] AWS S3 API'
+        valueType: custom
+    level: 0
+    fallthroughError: true
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.ListBuckets.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.ListBuckets.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.ListBuckets.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: true
+index: 6
