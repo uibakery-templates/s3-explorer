@@ -44,5 +44,9 @@ properties:
   dynamicErrorMessageWidth: true
   regexpPattern: '[\w\-./]+'
   placeholder: regex pattern
+  disabled:
+    value: false
+    dataValue: '{{actions.loopOverFiles.loading}}'
+    withData: true
 actions: {}
 slots: []

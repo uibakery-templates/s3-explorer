@@ -1,14 +1,14 @@
-id: '17000044794940.6590765620660031'
+id: '16999970984550.665953805319172'
 kind: workflow
-name: moveFile
+name: downloadFile
 nameConfigured: true
 steps:
-  - id: '17013416612640.6833456204142263'
+  - id: '17013416419990.6726622589279907'
     type: s3Query
-    name: s3Query2
+    name: s3Query
     params:
       - type: s3ActionType
-        value: moveFile
+        value: downloadFile
         valueType: custom
       - type: s3BucketName
         value: ''
@@ -23,7 +23,7 @@ steps:
         value: ''
         valueType: interpolatedValue
       - type: s3FileKey
-        value: '{{params.srcKey}}'
+        value: '{{params.fileKey}}'
         valueType: interpolatedValue
       - type: s3SignedOperationType
         value: GET
@@ -35,7 +35,7 @@ steps:
         value: ''
         valueType: interpolatedValue
       - type: s3DestinationFileKey
-        value: '{{params.dstKey}}'
+        value: ''
         valueType: interpolatedValue
       - type: s3TagSet
         value: ''
@@ -55,23 +55,25 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: false
+    nameConfigured: true
 mode: manual
-modeConfigured: false
-parentId: null
+modeConfigured: true
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.moveFile.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.downloadFile.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.moveFile.name}}" successfully executed
+  successToast: Action "{{actions.downloadFile.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.moveFile.name}}" has failed
+  errorToast: Action "{{actions.downloadFile.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
-  preserveStateOnPageChange: true
+  preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 5
+parentPageId: '1'
+parentId: '17013602740110.21744822239143113'
+index: 9

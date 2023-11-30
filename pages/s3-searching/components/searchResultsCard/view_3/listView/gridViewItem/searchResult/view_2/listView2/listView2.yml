@@ -16,7 +16,7 @@ styles:
       h: 104
 properties:
   data: '{{item.matches}}'
-  limit: '4'
+  limit: '{{item.matches}}.length'
   name: listView2
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl

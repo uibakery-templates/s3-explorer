@@ -16,7 +16,7 @@ styles:
       h: 27
 properties:
   data: '{{actions.listAllFiles.data}}'
-  name: metric3
+  name: averageSizeMetric
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -27,6 +27,7 @@ properties:
     withData: true
     dataValue: '{{actions.listAllFiles.loading}}'
     value: false
+actions: {}
 slots:
   - id: '17001286277680.02889942757310693'
     name: metricField
@@ -50,4 +51,3 @@ slots:
   - id: '17001286278940.5035495585911773'
     name: groupByField
     children: []
-actions: {}

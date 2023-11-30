@@ -5,7 +5,7 @@ nameConfigured: true
 steps:
   - id: '17013416185530.4912056115134753'
     type: s3Query
-    name: s3Query2
+    name: s3Query
     params:
       - type: datasourceId
         value: '[Sample] AWS S3'
@@ -59,6 +59,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 mode: manual
 modeConfigured: true
 config:

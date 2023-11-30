@@ -33,7 +33,7 @@ properties:
     - xl
     - xs
   allowResetValue:
-    value: true
+    value: false
     dataValue: 'true'
     withData: false
   allowSelectAll:
@@ -57,6 +57,10 @@ properties:
     withData: false
   helpTooltip: ''
   fieldTooltip: file extensions to include in search
+  disabled:
+    value: false
+    dataValue: '{{actions.loopOverFiles.loading}}'
+    withData: true
 actions: {}
 slots:
   - id: '17001806651490.21721119075234707'

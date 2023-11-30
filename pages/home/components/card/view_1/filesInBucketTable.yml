@@ -272,7 +272,7 @@ slots:
             value: left
             dataValue: bottom
             withData: false
-          width: '70'
+          width: '60'
           pinColumn: right
         actions:
           menuItemClick:
@@ -331,7 +331,7 @@ slots:
             transform: none
           primaryKey: false
           filter: true
-          width: '80'
+          width: '60'
           filterVariation:
             value: includes
             dataValue: includes

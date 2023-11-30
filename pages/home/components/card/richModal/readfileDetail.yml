@@ -112,22 +112,6 @@ slots:
         parentSlotId: '17000010549700.9510858070119688'
         index: 3
         slots: []
-      - id: '17000010549700.5779031878036085'
-        definitionId: atomicNumber
-        styles:
-          xl:
-            visible: true
-        properties:
-          name: atomicNumber2
-          prop: ContentLength
-          primaryKey: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          display: shortK
-        parentSlotId: '17000010549700.9510858070119688'
-        index: 4
-        slots: []
       - id: '17000010549700.891430714664531'
         definitionId: atomicString
         styles:
@@ -218,4 +202,20 @@ slots:
             - xs
         parentSlotId: '17000010549700.9510858070119688'
         index: 10
+        slots: []
+      - id: '17000010549700.5779031878036085'
+        definitionId: atomicString
+        parentSlotId: '17000010549700.9510858070119688'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString20
+          prop: ContentLength
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          editModeValue: ''
+          mappedValue: '{{formatBytes(value)}}'
+        index: 4
         slots: []

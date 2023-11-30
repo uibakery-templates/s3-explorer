@@ -5,7 +5,7 @@ nameConfigured: true
 steps:
   - id: '17013416509110.9577272752356372'
     type: s3Query
-    name: s3Query2
+    name: s3Query
     params:
       - type: s3ActionType
         value: listFiles
@@ -55,6 +55,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: false
+    nameConfigured: true
 mode: manual
 modeConfigured: false
 config:
@@ -73,4 +74,4 @@ config:
   preserveStateOnPageChange: true
 selected: true
 configured: true
-index: 3
+index: 1

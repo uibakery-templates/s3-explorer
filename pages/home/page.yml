@@ -27,9 +27,9 @@ slots:
             bindings: {}
             children:
               - components/card/card.yml
-              - components/metric.yml
-              - components/metric2.yml
-              - components/chart2.yml
-              - components/metric3.yml
+              - components/totalSizeMetric.yml
+              - components/numberOfFilesMetric.yml
+              - components/sizeByFileTypeChart.yml
+              - components/averageSizeMetric.yml
               - components/bucketsTable.yml
               - components/bucketUsageTreeMap.yml

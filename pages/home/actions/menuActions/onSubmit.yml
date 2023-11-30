@@ -9,8 +9,15 @@ steps:
     params:
       - type: asyncCode
         value: >-
-          await {{actions[`${ui.popupForm.value.id}File`]}}.trigger({
+          const actionMapper = {
+            ['copy']: {{actions.copyFile}},
+            ['move']: {{actions.moveFile}},
+          };
+
+
+          await actionMapper[{{ui.popupForm.value.id}}].trigger({
           ...ui.popupForm.value });
+
 
           {{ui.popupForm.close()}};
         valueType: interpolatedValue
@@ -29,10 +36,11 @@ config:
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.onSubmit.name}}" has failed
+  errorToast: Connect your own data source to be able to modify bucket.
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
-index: 9
+parentId: '17013602740110.21744822239143113'
+index: 12

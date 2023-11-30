@@ -5,7 +5,7 @@ nameConfigured: true
 steps:
   - id: '17013416551630.8294934700066132'
     type: s3Query
-    name: s3Query2
+    name: s3Query
     params:
       - type: s3ActionType
         value: copyFile
@@ -55,9 +55,10 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: false
+    nameConfigured: true
 mode: manual
 modeConfigured: false
-parentId: null
+parentId: '17013602740110.21744822239143113'
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.copyFile.name}}"?
@@ -65,13 +66,14 @@ config:
   successToast: Action "{{actions.copyFile.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
-  showErrorToast: true
+  showErrorToast: false
   errorToast: Action "{{actions.copyFile.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
-  preserveStateOnPageChange: true
+  preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 4
+parentPageId: '1'
+index: 11

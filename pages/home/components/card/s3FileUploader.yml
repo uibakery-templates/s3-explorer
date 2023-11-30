@@ -19,8 +19,10 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  datasource: UIBAKERY AWS S3 APP
+  datasource: '[Sample] AWS S3'
   s3Bucket: '{{state.bucketName}}'
-  maxFileSize: '2'
-actions: {}
+  maxFileSize: '1'
+  dynamicErrorMessageWidth: false
+actions:
+  uploadSuccess: []
 slots: []

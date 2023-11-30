@@ -1,9 +1,9 @@
 storeItemList:
   - id: '16999772985330.11278241433058067'
     name: bucketName
-    value: uibakery-aws-s3-app
+    value: uibakery-sample-bucket
     valueType: string
-    initialValue: uibakery-aws-s3-app
+    initialValue: uibakery-sample-bucket
     version: 1
   - id: '17001359826560.5666104975840678'
     name: searchProgress
@@ -33,6 +33,7 @@ metadata:
     </script>
   title: New app
   description: ''
+  breakpoints: []
 appSettings:
   properties:
     defaultData: '{}'
