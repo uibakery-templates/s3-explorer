@@ -29,4 +29,3 @@ config:
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
 selected: false
-index: 7

@@ -1,0 +1,6 @@
+- deleteFile
+- downloadFile
+- moveFile
+- copyFile
+- onSubmit
+- onMenuItemClick

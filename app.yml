@@ -39,5 +39,5 @@ appSettings:
     defaultData: '{}'
   actions: {}
   gridVersion: 2
-  density: default
+  density: compact
 internalType: project

@@ -1,0 +1,1 @@
+{{data.ContentType}}.startsWith('text') || /(json|xml)$/.test({{data.ContentType}});

@@ -1,0 +1,78 @@
+id: '17000044794940.6590765620660031'
+kind: workflow
+name: moveFile
+nameConfigured: true
+steps:
+  - id: '17013416612640.6833456204142263'
+    type: s3Query
+    name: s3Query
+    params:
+      - type: s3ActionType
+        value: moveFile
+        valueType: custom
+      - type: s3BucketName
+        value: ''
+        valueType: custom
+      - type: s3FilePrefix
+        value: ''
+        valueType: interpolatedValue
+      - type: s3Delimiter
+        value: ''
+        valueType: interpolatedValue
+      - type: s3MaxKeys
+        value: ''
+        valueType: interpolatedValue
+      - type: s3FileKey
+        value: '{{params.srcKey}}'
+        valueType: interpolatedValue
+      - type: s3SignedOperationType
+        value: GET
+        valueType: custom
+      - type: s3UploadContentType
+        value: ''
+        valueType: interpolatedValue
+      - type: s3UploadData
+        value: ''
+        valueType: interpolatedValue
+      - type: s3DestinationFileKey
+        value: '{{params.dstKey}}'
+        valueType: interpolatedValue
+      - type: s3TagSet
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: '[Sample] AWS S3'
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: false
+    nameConfigured: true
+mode: manual
+modeConfigured: false
+parentId: '17013602740110.21744822239143113'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.moveFile.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.moveFile.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: false
+  errorToast: Action "{{actions.moveFile.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentPageId: '1'

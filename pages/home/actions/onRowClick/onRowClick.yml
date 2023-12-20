@@ -1,0 +1,91 @@
+id: '16999680513090.022181194028760398'
+kind: workflow
+name: onRowClick
+nameConfigured: true
+steps:
+  - id: '16999934397490.14876233822267282'
+    type: executeAction
+    name: readFile
+    params:
+      - type: action
+        value: '16999691250120.18535816335285804'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: ./readFile-customParams.js
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 2
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16999684874390.5610874111552999'
+    type: condition
+    name: hasRichContent
+    params:
+      - type: code
+        value: ./hasRichContent.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17000009654600.2153547283606989'
+                type: customAsyncCode
+                name: openRichModal
+                params:
+                  - type: asyncCode
+                    value: ./openRichModal.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '16999684943290.04587058584731918'
+                type: customAsyncCode
+                name: openModal
+                params:
+                  - type: asyncCode
+                    value: ./openModal.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.onRowClick.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.onRowClick.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.onRowClick.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
