@@ -1,0 +1,80 @@
+id: '17001281909670.41192908150067353'
+kind: workflow
+name: onFileSearch
+nameConfigured: true
+steps:
+  - id: '17001761517310.6269485279454077'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17001282247040.36788490912283334'
+                type: customAsyncCode
+                name: filterByWildcard
+                params:
+                  - type: asyncCode
+                    value: ./filterByWildcard.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '17001766725750.47620112057784936'
+                type: executeAction
+                name: execute
+                params:
+                  - type: action
+                    value: '16999647748280.017435746760865678'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: ./execute-customParams.js
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.onFileSearch.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.onFileSearch.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.onFileSearch.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

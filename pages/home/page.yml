@@ -3,7 +3,6 @@ name: S3 Explorer
 url: home
 roleIds: []
 disableInMenu: false
-index: 0
 slots:
   - id: '1'
     name: content

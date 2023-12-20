@@ -1,0 +1,76 @@
+id: '16999647748280.017435746760865678'
+kind: workflow
+name: listAllFiles
+nameConfigured: true
+steps:
+  - id: '17013416509110.9577272752356372'
+    type: s3Query
+    name: s3Query
+    params:
+      - type: s3ActionType
+        value: listFiles
+        valueType: custom
+      - type: s3BucketName
+        value: '{{state.bucketName}}'
+        valueType: custom
+      - type: s3FilePrefix
+        value: ''
+        valueType: interpolatedValue
+      - type: s3Delimiter
+        value: ''
+        valueType: interpolatedValue
+      - type: s3MaxKeys
+        value: ''
+        valueType: interpolatedValue
+      - type: s3FileKey
+        value: ''
+        valueType: interpolatedValue
+      - type: s3SignedOperationType
+        value: GET
+        valueType: custom
+      - type: s3UploadContentType
+        value: ''
+        valueType: interpolatedValue
+      - type: s3UploadData
+        value: ''
+        valueType: interpolatedValue
+      - type: s3DestinationFileKey
+        value: ''
+        valueType: interpolatedValue
+      - type: s3TagSet
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: '[Sample] AWS S3'
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: false
+    nameConfigured: true
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.listAllFiles.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.listAllFiles.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.listAllFiles.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: true

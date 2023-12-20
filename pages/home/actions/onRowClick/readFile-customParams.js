@@ -1,0 +1,1 @@
+return { fileKey: {{ui.filesInBucketTable.clickedRow.data.Key}} };

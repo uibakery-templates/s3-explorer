@@ -1,0 +1,1 @@
+{{ui.richModal.open()}}

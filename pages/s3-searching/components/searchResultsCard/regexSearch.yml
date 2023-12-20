@@ -7,7 +7,7 @@ styles:
       x: 17
       y: 0
       w: 4
-      h: 10
+      h: 9
   xs:
     gridItem:
       x: 10
@@ -42,7 +42,7 @@ properties:
     dataValue: 'false'
     withData: false
   dynamicErrorMessageWidth: true
-  regexpPattern: '[\w\-./]+'
+  regexpPattern: /[\w\-./]+/gm
   placeholder: regex pattern
   disabled:
     value: false

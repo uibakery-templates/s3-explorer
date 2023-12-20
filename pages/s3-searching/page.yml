@@ -4,7 +4,6 @@ url: s3-searching
 roleIds: []
 disableInMenu: false
 parentPageId: ''
-index: 1
 slots:
   - id: '17000773280870.5994229655922527'
     name: content
