@@ -17,14 +17,16 @@ metadata:
   code: |-
     <script>
       function formatBytes(bytes, decimals = 0) {
-        if (!bytes) return "0 bytes";
+        if (!bytes) {
+          return "0 bytes";
+        }
 
         // https://en.wikipedia.org/wiki/Binary_prefix
         const sizes = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "RB", "QB"];
 
         const i = Math.floor(Math.log2(bytes) / 10);
-
-        return `${(bytes / (2 ** 10) ** i).toFixed(Math.max(0, decimals))} ${sizes[i] ?? `^ ${i}`}`;
+        
+        return `${(bytes / (2 ** 10) ** i).toFixed(decimals)} ${sizes[i] ?? `^ ${i}`}`;
       }
 
       function encodeHTML(source) {

@@ -416,6 +416,9 @@ properties:
         top: '2%',
         left: '2%',
       },
+      tooltip: {
+        formatter: ({ treeAncestors: [root], value, data }) => `${encodeHTML(data.path ?? root.name)}<br/><b>${formatBytes(value)}</b>`,
+      },
       ...({{actions.makeTree.data.length}} > 0 ? {} : { graphic }),
       series: [
         {
@@ -452,6 +455,7 @@ properties:
           data: {{actions.makeTree.data}},
         },
       ],
+      color: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc', '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
     };
   name: bucketUsageTreeMap
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
