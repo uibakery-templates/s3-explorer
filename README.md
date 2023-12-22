@@ -30,4 +30,4 @@
   <a href="https://uibakery.io/on-premise-ui-bakery?utm_source=github&utm_campaign=github_templates">Self-host</a>
 </h3>
 
-<a href="https://cloud.uibakery.io/auth/register/?utm_source=github"><img src="" width="100%" alt=""></a>
+<a href="https://cloud.uibakery.io/auth/register/?utm_source=github"><img src="https://github.com/uibakery-templates/s3-explorer/assets/48954743/62bf7777-4b84-4c2f-b678-83787fd1c641" width="100%" alt="S3 Explorer"></a>
